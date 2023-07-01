@@ -1,18 +1,40 @@
+import {NavLink, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Cart from "./pages/Cart";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return <>
-    <nav className="navbar">
-  <ul className="navbar-list">
-    <li className="navbar-item"><a href="index.html">Home</a></li>
-    <li className="navbar-item"><a href="products.html">Products</a></li>
-    <li className="navbar-item"><a href="about.html">About Us</a></li>
-    <li className="navbar-item"><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-
-  
-  </>;
+    <nav>
+      <ul>
+        <li>
+          <NavLink to="/">Home</NavLink>
+        </li>
+        <li>
+          <NavLink to="/about">About</NavLink>
+        </li>
+        <li>
+          <NavLink to="/cart">Cart</NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact">Contact us</NavLink>
+        </li>
+      </ul>
+    </nav>
+  <Routes>
+    <Route path="/" element={<Home/>}/>
+    <Route path="/about" element={<About/>}/>
+    <Route path="/cart" element={<Cart/>}/>
+    <Route path="/contact" element={<Contact/>}/>
+    <Route path="*" element={<NotFound/>}/>
+  </Routes>
+  <footer>
+    <p>&copy; 2023 Pet Accessories Store. All rights reserved.</p>
+  </footer>
+  </>
 }
 
 export default App;
