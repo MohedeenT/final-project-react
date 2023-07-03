@@ -1,4 +1,11 @@
+import accessories from "./accessories";
+
 export default function Home() {
+  const handleDetailsClick = (id) => {
+    // Logic to handle the details button click
+    console.log("Details clicked for accessory with ID:", id);
+  };
+
   return (
     <main>
       <section className="hero">
@@ -11,22 +18,19 @@ export default function Home() {
 
       <section className="featured-products">
         <h2>Featured Products</h2>
-        <div className="product">
-          <img src="product1.jpg" alt="Product 1" />
-          <h3>Product 1</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <a href="#" className="btn">
-            View Details
-          </a>
-        </div>
-        <div className="product">
-          <img src="product2.jpg" alt="Product 2" />
-          <h3>Product 2</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <a href="#" className="btn">
-            View Details
-          </a>
-        </div>
+
+        {accessories.map((accessory) => (
+          <div className="product" key={accessory.id}>
+            <h3>{accessory.name}</h3>
+            <p>Size: {accessory.Size}</p>
+            <p>Price: {accessory.Price}</p>
+            <img src={accessory.photo} alt={accessory.name} />
+
+            <button onClick={() => handleDetailsClick(accessory.id)}>
+              View Details
+            </button>
+          </div>
+        ))}
       </section>
     </main>
   );
