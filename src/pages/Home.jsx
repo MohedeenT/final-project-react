@@ -11,10 +11,7 @@ export default function Home() {
     <main>
       <section className="hero">
         <h1>Find the perfect accessories for your furry friends</h1>
-
-        <a href="#" className="btn">
-          Shop Now
-        </a>
+        <input type="text" />
       </section>
 
       <section className="featured-products">
