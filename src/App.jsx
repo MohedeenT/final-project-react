@@ -18,7 +18,8 @@ function App() {
     data: accessories,
     query: "",
     filteredData: [],
-    cart: []
+    cart: [],
+    showPayWindow: false
   });
 
   return (

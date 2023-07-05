@@ -1,20 +1,10 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { stateContext } from "../App";
+import PaymentWindow from "../components/PaymentWindow";
 
 export default function Cart(){
 
   const { state, setState } = useContext(stateContext);
-
-  // useEffect(() => {
-  //   setState((draft) => {
-  //     (draft.cart = state.data.filter((data) => {
-  //       return data.quantityInCart> 0;
-  //     }));
-  //   });
-
-  //   console.log(state.cart);
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [state.cart]);
 
   const handleDelete = (itemToDelete)=>{
     setState((draft)=>{
@@ -24,7 +14,18 @@ export default function Cart(){
     })
   }
 
+  const handlePay = ()=>{
+    setState((draft)=>{
+      draft.showPayWindow = !draft.showPayWindow;
+      })
+  }
+
     return (<>
+      <div id="app">
+          <div className="container">
+          <PaymentWindow/>
+          </div>
+          </div>
     <h1>Shopping Cart</h1>
 <div id="shopCart">
 <table>
@@ -38,7 +39,7 @@ export default function Cart(){
     </tr>
   </thead>
   <tbody>
-    {state.cart.map((cartItem, index)=>(
+    {state.cart?.map((cartItem, index)=>(
       <tr key={`item-${index}`}>
       <td>{cartItem.name}</td>
       <td>${cartItem.price}</td>
@@ -73,7 +74,12 @@ export default function Cart(){
 </div>
 <div className="empty-cart">
   {state.cart.length === 0 && <p>Your cart is empty.</p>}
-<button id="checkout-btn" target="_blank" rel="noreferrer">Proceed to Checkout</button>
+<button 
+id="checkout-btn" 
+style={{display: state.cart.length > 0 ? '':'none'}}
+onClick={handlePay} 
+>Proceed to Checkout</button>
 </div>
+{state.orderId && <h3 style={{textAlign: "center"}}>{`thank you for your order! order ID: ${state.orderId}`}</h3>}
 </>)
 }
