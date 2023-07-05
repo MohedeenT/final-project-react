@@ -61,7 +61,8 @@ export default function Cart(){
       ? state.cart.reduce((sum, product)=>{
         const productTotal = product.price * product.quantityInCart;
         const total =  sum + productTotal
-        return total.toFixed(2)
+        
+        return total
       },0)  
       :"0.00"
       }</td>
