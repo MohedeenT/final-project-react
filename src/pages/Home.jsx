@@ -1,14 +1,10 @@
-import accessories from "../data/accessories";
-import { useImmer } from "use-immer";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import {stateContext } from "../App"
+
 
 export default function Home() {
 
-  const [state, setState] = useImmer({
-    data: accessories,
-    query: "",
-    filteredData: [],
-  });
+  const { state, setState } = useContext(stateContext);
 
   useEffect(() => {
     setState((draft) => {
@@ -26,7 +22,11 @@ export default function Home() {
   };
 
   const handleClick = (buttonText)=>{
-    console.log(buttonText);
+    const searchInput = document.getElementById('search-bar')
+    searchInput.value = ""
+    //Removes the search text when any category is clicked
+
+
     switch (buttonText) {
       case "Safety":
         setState((draft) => {
@@ -65,7 +65,7 @@ export default function Home() {
       <section className="hero">
         <h1>Find the perfect accessories for your furry friends</h1>
         <h2>Categories</h2>
-        <div className="cat-btns" style={{margin: "10px"}}>
+        <div id="cat-btns-container">
           <button
           onClick={e=>handleClick(e.target.textContent)}
           >Safety</button>
@@ -80,9 +80,8 @@ export default function Home() {
           >Toys</button>
         </div>
         <input 
-        className="form-control rounded"
         id='search-bar'
-        placeholder='Search...'
+        placeholder='Search all items...'
         onChange={(e)=>{
           setState((draft)=>{
             draft.query = e.target.value.toLowerCase()
