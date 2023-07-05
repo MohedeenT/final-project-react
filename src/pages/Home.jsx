@@ -16,9 +16,23 @@ export default function Home() {
     console.log(state.filteredData);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.query]);
+  
+  const handleAddToCart = (product) => {
 
-  const handleDetailsClick = (id) => {
-    // Logic to handle the details button click
+    const existingItem = state.cart.find((item)=>{
+      return item.id === product.id
+    }) 
+    existingItem 
+    ?
+    setState((draft)=>{
+       draft.cart.map((cartItem)=>{
+        if (cartItem.id === product.id) return cartItem.quantityInCart +=1
+      })
+    })
+    :
+    setState((draft)=>{
+      draft.cart.push(product)
+    })
   };
 
   const handleClick = (buttonText)=>{
@@ -95,7 +109,9 @@ export default function Home() {
             <p>Price: {filteredAccessory.price}</p>
             <img src={filteredAccessory.photo} alt={filteredAccessory.name} />
 
-            <button onClick={() => handleDetailsClick(filteredAccessory.id)}>
+            <button onClick={
+              () => handleAddToCart(filteredAccessory)
+              }>
               Add to cart
             </button>
           </div>
