@@ -8,14 +8,14 @@ nav {
   margin: 50px;
   text-decoration: none;
 }
-li {
+
+nav li {
   display: block;
-  border-radius: 5%;
-  margin: 5px;
+  margin: 1%;
 }
 li a {
   background-color: white;
-
+  border-radius: 10%;
   display: block;
   text-decoration: none;
   color: inherit;
@@ -42,7 +42,7 @@ footer {
 /* nav */
 
 .active {
-  background-color: olivedrab;
+  background-color: skyblue;
 }
 
 ul {

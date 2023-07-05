@@ -1,5 +1,3 @@
-import React from "react";
-
 const AccessoriesList = ({ accessories }) => {
   return (
     <ul style={{ listStyleType: "none", padding: 0 }}>

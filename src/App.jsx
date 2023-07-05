@@ -5,7 +5,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
-import Hello from "./pages/Hello";
+import Hello from "./components/Hello";
 
 function App() {
   return (

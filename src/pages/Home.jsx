@@ -1,5 +1,5 @@
-import accessories from "./accessories";
-import ListView from "./ListView";
+import accessories from "../data/accessories";
+import ListView from "../components/ListView";
 
 export default function Home() {
   const handleDetailsClick = (id) => {
@@ -19,7 +19,7 @@ export default function Home() {
 
       <section className="featured-products">
         <h2>Featured Products</h2>
-        <p>{ListView()}</p>
+        <p><ListView/></p>
 
         {accessories.map((accessory) => (
           <div className="product" key={accessory.id}>
