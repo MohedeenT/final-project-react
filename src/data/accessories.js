@@ -79,7 +79,7 @@ const accessories = [
       "https://media.istockphoto.com/id/1405730723/photo/empty-asphalt-road-and-new-year-2023-concept-driving-on-an-empty-road-to-goals-2023-with.webp?b=1&s=170667a&w=0&k=20&c=xn2OFq_1n9KNM8OdUzIxKBH949UOqe5M4_VQ7XAcvwQ=",
     name: "boots",
     price: "5",
-    category: "clothes",
+    category: "Clothes",
     quantityInCart: 1,
   },
   {
@@ -88,7 +88,7 @@ const accessories = [
       "https://media.istockphoto.com/id/1405730723/photo/empty-asphalt-road-and-new-year-2023-concept-driving-on-an-empty-road-to-goals-2023-with.webp?b=1&s=170667a&w=0&k=20&c=xn2OFq_1n9KNM8OdUzIxKBH949UOqe5M4_VQ7XAcvwQ=",
     name: "tshirt",
     price: "5",
-    category: "clothes",
+    category: "Clothes",
     quantityInCart: 1,
   },
   {
