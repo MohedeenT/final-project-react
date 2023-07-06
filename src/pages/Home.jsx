@@ -18,7 +18,7 @@ export default function Home() {
   }, [state.query]);
   
   const handleAddToCart = (product) => {
-
+    alert(`added ${product.name} to cart!`)
     const existingItem = state.cart.find((item)=>{
       return item.id === product.id
     }) 
