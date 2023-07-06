@@ -13,18 +13,17 @@ import accessories from "./data/accessories";
 const stateContext = createContext();
 
 function App() {
-  
   const [state, setState] = useImmer({
     data: accessories,
     query: "",
     filteredData: [],
     cart: [],
     showPayWindow: false,
-    orderId:""
+    orderId: "",
   });
 
   return (
-    <stateContext.Provider value={{state,setState}}>
+    <stateContext.Provider value={{ state, setState }}>
       <header> {<Hello />} </header>
 
       <nav>
@@ -57,4 +56,4 @@ function App() {
   );
 }
 
-export  {App, stateContext};
+export { App, stateContext };
