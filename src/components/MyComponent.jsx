@@ -34,9 +34,11 @@ import React, { useEffect, useState } from "react";
 const MyComponent = () => {
   const [products, setProducts] = useState([]);
 
+  const [error, setError] = useState("");
+
   useEffect(() => {
     fetchProducts();
-  }, []);
+  }, [products]);
 
   function fetchProducts() {
     fetch("http://localhost:4000/products")
@@ -44,10 +46,17 @@ const MyComponent = () => {
       .then((data) => {
         setProducts(data);
       })
-      .catch((error) => console.log(error));
+      .catch((e) => setError("aa"));
   }
-
-  return <pre>{JSON.stringify(products, null, 2)}</pre>;
+  return (
+    <>
+      <div>(xxxx){error}</div>
+      <div>{products[0].title}</div>
+    </>
+  );
 };
+
+//<h2>{products.length}</h2>;
+// return <pre>{JSON.stringify(products, null, 2)}</pre>;
 
 export default MyComponent;
