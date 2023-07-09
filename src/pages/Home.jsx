@@ -110,10 +110,12 @@ export default function Home() {
           {state.filteredData.map((filteredAccessory, index) => (
             <div className="product" key={filteredAccessory.id}>
               <h3>{filteredAccessory.name}</h3>
-              <p>Price: {filteredAccessory.price}</p>
+              <p>Price: ${filteredAccessory.price}</p>
               <img src={filteredAccessory.photo} alt={filteredAccessory.name} />
 
-              <button onClick={() => handleAddToCart(filteredAccessory)}>
+              <button
+              className="btn-add-cart"
+              onClick={() => handleAddToCart(filteredAccessory)}>
                 Add to cart
               </button>
 

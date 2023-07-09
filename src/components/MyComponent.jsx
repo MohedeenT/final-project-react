@@ -77,13 +77,15 @@ const MyComponent = () => {
       .then((data) => {
         setProducts(data);
       })
-      .catch((e) => setError("Error fetching products."));
+      .catch((e) => setError("Error fetching Jokes."));
   }
+
+  const randomNumber = Math.floor(Math.random() * 3);
 
   return (
     <>
       <div>{error}</div>
-      {products.length > 0 && <div>{products[0].title}</div>}
+      {products.length > 0 && <div>{products[randomNumber].joke}</div>}
     </>
   );
 };

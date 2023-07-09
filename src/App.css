@@ -123,6 +123,17 @@ table td {
   font-weight: bold;
 }
 
+.btn-add-cart {
+  background-color: #3c79e4;
+  border: none;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  padding: 10px 15px;
+  color: #fff;
+  border-radius: 4px;
+}
+
 .empty-cart {
   text-align: center;
   color: #999;
