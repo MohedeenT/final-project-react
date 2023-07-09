@@ -68,7 +68,7 @@ const accessories = [
     id: "product-8",
     photo:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXYSfP1r0hT21kgTWZZnhROWF2wXsFMa2XhQ&usqp=CAU",
-    name: "hat",
+    name: "Hat",
     price: "5",
     category: "Clothes",
     quantityInCart: 1,
@@ -77,7 +77,7 @@ const accessories = [
     id: "product-9",
     photo:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm6-JN9meLF_b7MFraXNBK2WPiHsAZ_KsUsQ&usqp=CAU",
-    name: "boots",
+    name: "Boots",
     price: "5",
     category: "Clothes",
     quantityInCart: 1,
@@ -86,7 +86,7 @@ const accessories = [
     id: "product-10",
     photo:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMFGQwcihEGDBp80ZrrIvUXCCtFvNt_zy5m6TC7Ki6-zB0ZzxRNMgxoiBOIrNQPc2iTEo&usqp=CAU",
-    name: "tshirt",
+    name: "Tshirt",
     price: "5",
     category: "Clothes",
     quantityInCart: 1,
@@ -104,7 +104,7 @@ const accessories = [
     id: "product-12",
     photo:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZTWBIpCqVmmH-RqWmvLVlsJtO9mVMQIAoaQ&usqp=CAU",
-    name: "pet carrier",
+    name: "Pet Carrier",
     price: "5",
     category: "Safety",
     quantityInCart: 1,
