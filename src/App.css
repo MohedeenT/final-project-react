@@ -87,6 +87,17 @@ li:hover {
 
 .product {
   margin: 20px;
+  padding: 5px;
+  border: black;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #3c79e4;
+  border-radius: 20px;
+}
+
+.product-image {
+  max-width: 200px;
+  height: 200px;
 }
 
 /* Shopping cart stuff */

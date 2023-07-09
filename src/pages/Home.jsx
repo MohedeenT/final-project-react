@@ -111,7 +111,7 @@ export default function Home() {
             <div className="product" key={filteredAccessory.id}>
               <h3>{filteredAccessory.name}</h3>
               <p>Price: ${filteredAccessory.price}</p>
-              <img src={filteredAccessory.photo} alt={filteredAccessory.name} />
+              <img className="product-image" src={filteredAccessory.photo} alt={filteredAccessory.name} />
 
               <button
               className="btn-add-cart"
